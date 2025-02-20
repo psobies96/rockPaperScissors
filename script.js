@@ -28,18 +28,19 @@ function playGame(){
     playRound(humanSelection, computerSelection)
     }
 function playRound(humanChoice, computerChoice){
+        console.log("Round " + i)
     if ((humanChoice === "rock" && computerChoice === "scissors") ||
         (humanChoice === "scissors" && computerChoice === "paper")||
         (humanChoice === "paper" && computerChoice === "rock")){
             humanScore++;
-            console.log("You Win this round! " + humanChoice + " beats " + computerChoice  + ". Your Score: " + humanScore + "\n Computer Score: " + computerScore);
+            console.log("You Win this round! " + humanChoice + " beats " + computerChoice  + ". \nYour Score: " + humanScore + "\nComputer Score: " + computerScore);
         } else if ((computerChoice === "rock" && humanChoice === "scissors") ||
         (computerChoice === "scissors" && humanChoice === "paper")||
         (computerChoice === "paper" && humanChoice === "rock")) {
             computerScore++;
-            console.log("You lose this round! " + computerChoice + " beats " + humanChoice + ". Your Score: " + humanScore + "\n Computer Score: " + computerScore)
+            console.log("You lose this round! " + computerChoice + " beats " + humanChoice + ". \nYour Score: " + humanScore + "\nComputer Score: " + computerScore)
         } else if (humanChoice === computerChoice){
-            console.log("You tied.")
+            console.log("You tied. \nYour Score: " + humanScore + "\nComputer Score: " + computerScore)
         } else {
             console.log("Please enter valid choice.")
         }
@@ -47,8 +48,10 @@ function playRound(humanChoice, computerChoice){
 }
 if (humanScore > computerScore){
     console.log("YOU WIN THE GAME!")
-} else{
+} else if(humanScore < computerScore){
     console.log("YOU LOSE THE GAME! Please refresh to try again.")
+} else {
+    console.log("You tied! Try again!")
 }
 }
     
